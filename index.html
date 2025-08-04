@@ -7,13 +7,13 @@
         <style>
             body {
                 background: rgb(255, 245, 231);
-                color: #3a2704;
+                color: #201500;
                 font: normal 1em/1.5 "Lucida Grande", Verdana, sans-serif;
                 margin: 0 auto;
                 max-width: 700px;
-                padding: 0.5lh;
+                padding: 0 0.5lh 1lh;
             }
-            body::before {
+             body::before {
                 content: "";
                 height: 0.5lh;
                 width: 100%;
@@ -29,9 +29,14 @@
             body > * + * {
                 margin: 1em 0 0;
             }
+
             #ingredienser {
                 padding: 0;
                 list-style-position: inside;
+            }
+
+            :is(h1,h2,h3) {
+                font-family: "Comic Sans MS";
             }
 
             hr {
@@ -46,7 +51,7 @@
                 height: 0.25lh;
             }
         </style>
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍝</text></svg>">
         <meta name="description" content="Elsker du også bolognese? Her er den ekte, tradisjonelle oppskriften på Ragù alla Bolognese." />
         <meta property="og:title" content="Ragù alla Bolognese &bull; Tradisjonell oppskrift" />
         <meta property="og:image" content="https://bolognese.no/bolo.webp" /
@@ -56,30 +61,30 @@
     <body>
         <h1>Ragù alla Bolognese</h1>
         <p>Buongiorno! Elsker du også <em>bolognese</em>?</p>
-        <p>Dette er den "offisielle" oppskriften på Ragù Bolognese, oversatt fra <a href="https://www.accademiaitalianadellacucina.it/sites/default/files/Rag%C3%B9%20alla%20bolognese%20-%20updated%20recipe_20%20April%202023.pdf">originalen (PDF)</a> til selveste <a href="https://www.accademiaitalianadellacucina.it">l’Accademia Italiana della Cucina</a>.</p>
+        <p>Dette er den <a href="https://www.accademiaitalianadellacucina.it/sites/default/files/Rag%C3%B9%20alla%20bolognese%20-%20updated%20recipe_20%20April%202023.pdf">"ekte", tradisjonelle oppskriften</a> på Ragù alla Bolognese, hentet fra <a href="https://www.accademiaitalianadellacucina.it">l’Accademia Italiana della Cucina</a>.</p>
 
         <p>Lykke til med kokingen — håper det smaker!</p>
 
-        <hr />
+        <hr aria-hidden="true" />
         
         <h2>Ingredienser</h2>
-        <p>Dette er nok til 6 personer.</p>
+        <p>Til 6 personer.</p>
         <ul id="ingredienser">
             <li>Kvernet storfekjøtt (400 g)</li>
-            <li>Ferskt sideflesk av svin, eller <a href="https://www.oluf.no/negrini-pancetta-singola-1-5-kg">urøkt pancetta</a> (150 g)</li>
+            <li>Ferskt sideflesk/buklist av svin, eller <a href="https://smakavitalia.no/pancetta-ca-300g-franchi-salumi">urøkt pancetta</a> (150 g)</li>
             <li>½ løk (60 g)</li>
             <li>1 gulrot (60 g)</li>
             <li>1 selleristang (60 g)</li>
-            <li><a href="https://www.vinmonopolet.no/Land/Italia/Veneto/Soave/Ca%60Bunotti-Soave-2024/p/2699601">Hvit</a> eller rød vin (125 ml)</li>
-            <li>Tomatsaus (<a href="https://www.google.com/search?q=tomat+passata&udm=14">Passata</a>) (200 g)</li>
+            <li>1 glass hvit</a> eller rød vin (125 ml)</li>
+            <li>Silte tomater (<a href="https://www.google.com/search?q=tomat+passata&udm=14">Passata</a>) (200 g)</li>
             <li>Tomatpuré, <a href="https://www.google.com/search?q=tomatpur%C3%A9+dobbel&udm=14">dobbelkonsentrert</a> (1 ss)</li>
             <li>Kjøtt- eller grønnsakskraft (250 ml)</li>
             <li>Olivenolje (3 ss)</li>
             <li>Salt og pepper</li>
-            <li>Tagliatelle</li>
+            <li>Pasta (Tagliatelle)</li>
         </ul>
 
-        <hr />
+        <hr aria-hidden="true" />
 
         <h2>Slik gjør du</h2>
         <p><mark>Les hele oppskriften før du begynner, så er du bedre forberedt!</mark></p>
@@ -100,20 +105,20 @@
         <p>Ha olivenolje i gryta og sett den på lav-medium varme. Kutt pancettaen i små terninger, og la den putre mens fettet smelter.</p>
         
         <h3>Steg 3 - Mykgjør grønnsakene</h3>
-        <p>Kutt grønnsakene i små terninger, og bland det inn med pancettaen på lav varme. Rør rundt til grønnsakene er myke. De skal ikke brunes eller få farge, så du må røre ganske ofte.</p>
+        <p>Kutt grønnsakene i små terninger, og bland dem inn med pancettaen på lav varme. Rør rundt til de er myke. De skal ikke brunes eller få farge, så du må røre ganske ofte.</p>
 
         <h3>Steg 4 – Brun kjøttet</h3>
-        <p>Sleng oppi kjøttet når grønnsakene er myke og sett på medium varme. Hakk opp kjøttet og rør rundt til det freser og er brunt.</p>
+        <p>Sleng så oppi kjøttet og sett på medium varme. Hakk det opp og rør rundt til det freser og er brunt.</p>
 
-        <h3>Steg 5 - Fyll på væske</h3>
-        <p>Oppi med vinen! La den koke bort, før du har oppi tomatpuré og tomatsaus. Rør det godt inn og ha i kraften. Nå skal det putre i to-tre timer på lav varme, med lokket på.</p>
+        <h3>Steg 5 - Fyll på med væske</h3>
+        <p>Oppi med vinen! Den koke vi. Når den er kokt bort, har du oppi tomatpuré og tomatsaus. Rør det godt inn og ha i kraften. La det putre i to-tre timer på lav varme, med lokket på.</p>
 
         <h3>Mens du venter....</h3>
         <p>Stikk innom og rør en gang i blant. Hvis det trengs kan du ha oppi mer kraft. Ikke glem å koke pasta – tagliatelle er det tradisjonelle valget.</p>
 
         <h3>Steg 6 – Servér!</h3>
         <p>Når sausen er mørk, tjukk og blank er den klar til servering. Smak til med salt og pepper, og nyt.</p>
-        <hr />
+        <hr aria-hidden="true" />
         <p>Arrividerci!</p>
         <p>(Send gjerne bilder og/eller kommentarer til <a href="mailto:hei@bolognese.no">hei@bolognese.no</a>)</p>
     </body>
