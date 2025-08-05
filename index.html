@@ -4,68 +4,160 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Ragù alla Bolognese &bull; Den ekte, tradisjonelle oppskriften</title>
+        <link
+            rel="preload"
+            href="/fonts/Irregardless-Black.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="/fonts/Irregardless-Bold.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
         <style>
+            @font-face {
+                font-family: "Irregardless";
+                src:
+                    local("Irregardless"),
+                    url("/fonts/Irregardless-Black.woff2") format("woff2");
+                font-weight: 900;
+                font-style: normal;
+                font-display: swap;
+            }
+            @font-face {
+                font-family: "Irregardless";
+                src:
+                    local("Irregardless"),
+                    url("/fonts/Irregardless-Bold.woff2") format("woff2");
+                font-weight: 700;
+                font-style: normal;
+                font-display: swap;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            img {
+                display: block;
+                max-width: 100%;
+            }
+
+            a {
+                color: #ce2b37;
+                outline-color: transparent;
+                text-decoration: 2px underline #ce2b37;
+                text-underline-offset: 3px;
+            }
+
+
+            a:focus {
+                text-decoration: none;
+                background: #ce2b37;
+                color: #fff;
+            }
+
+            a:hover {
+                text-decoration: none;
+            }
+
             html {
+                font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
                 font-size: clamp(1em, 0.9em + 1vw, 1.5em);
             }
+
             body {
-                background: rgb(255 245 231 / 50%);
-                color: #201500;
-                font-family: "Lucida Grande", Verdana, sans-serif;
-                line-height: 1.5;
-                margin: 0 auto;
-                max-width: 700px;
-                padding: 0;
+                margin: 0;
             }
-             body::before {
-                content: "";
-                height: 0.5lh;
-                width: 100%;
-                background: linear-gradient(
-                    90deg,
-                    #009246 33.33%,
-                    #FFF 33.33%,
-                    #FFF 66.66%,
-                    #ce2b37 66.66%
-                );
-                display: block;
+
+            :is(h1, h2, h3) {
+                font-family: Irregardless;
             }
-            body > * + * {
-                margin: 1em 0 0;
+
+            :is(h1,h2,h3):first-child {
+                margin: 0;
+            }
+
+            h2 {
+                color: #ce2b37;
+                font-size: 2em;
+                font-weight: 700;
+            }
+            h3{
+                color: #009246;
+                font-size: 1.5em;
             }
 
             :is(header, section) {
-                padding: 0 0.5lh;
+                margin-inline: auto;
+                max-width: 700px;
             }
 
-            #ingredienser {
-                background: #fff;
-                border-left: 0.5lh solid #009246;
-                border-right: 0.5lh solid #ce2b37;
-                padding: 0.75lh;
-                > h2 { margin: 0; }
-                > ul {
-                    list-style-position: inside;
-                    margin: 0;
-                    padding: 0;
+            :is(section) {
+                padding: 0.5lh;
+            }
+
+            :is(header) {
+                &::before,
+                &::after {
+                    content: "";
+                    background: linear-gradient(90deg, #009246 33.33%, #fff 33.33%, #fff 66.66%, #ce2b37 66.66%);
+                    display: block;
+                    height: var(--border-height, 1.5em);
                 }
             }
 
-            :is(h1,h2,h3) {
+            header {
+                display: grid;
+                gap: 1em;
+                text-align: center;
+                h1 {
+                    color: #ce2b37;
+                    font: 900 3.7em/1 Irregardless;
+                    margin: 0;
+                }
+
+                img {
+                    place-self: center;
+                }
                 
+                p {
+                    font: 700 2em/1 Irregardless;
+                    margin: 0;
+                }
             }
 
-            hr {
-                background: linear-gradient(
-                    90deg,
-                    #009246 33.33%,
-                    #FFF 33.33%,
-                    #FFF 66.66%,
-                    #ce2b37 66.66%
-                    );
-                border: 0;
-                height: 0.5lh;
+            #ingredienser {
+                border: 3px solid #ce2b37;
+                
+                h2 {
+                    color: #ce2b37;
+                    margin: 0;
+                }
+
+                ul {
+                    list-style: none inside;
+                    margin: 0;
+                    padding: 0;
+
+                    li {
+                        display: flex;
+                        align-items: first center;
+                        gap: 0.5em;
+                        margin: 0.5em 0;
+                    }
+                    [type=checkbox] {
+                        flex: 0 0 1.5em;
+                        height: 1.5em;
+                        width: 1.5em;
+                    }
+                }
             }
+            
         </style>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍝</text></svg>">
         <meta name="description" content="Elsker du også bolognese? Her er den ekte, tradisjonelle oppskriften på Ragù alla Bolognese." />
@@ -77,33 +169,38 @@
     <body>
         <header>
             <h1>Ragù alla Bolognese</h1>
-            <p>Buongiorno! Elsker du også <em>bolognese</em>?</p>
-            <p>Dette er den <a href="https://www.accademiaitalianadellacucina.it/sites/default/files/Rag%C3%B9%20alla%20bolognese%20-%20updated%20recipe_20%20April%202023.pdf">"ekte", tradisjonelle oppskriften</a> på Ragù alla Bolognese, hentet fra <a href="https://www.accademiaitalianadellacucina.it">l’Accademia Italiana della Cucina</a>.</p>
-            <p>Lykke til med kokingen — håper det smaker!</p>
+            <img src="accademiaitalianadellacucina_logo.webp" alt="Logoen til Accademia Italiana della Cucina" heigh="80" width="80" />
+            <p>Den ekte og tradisjonelle oppskriften</p>
         </header>
         
+        <section>
+            <p>👋🏻 Buongiorno! Elsker du også <em>bolognese</em>?</p>
+            <p>Her er den <a href="Rag%C3%B9%20alla%20bolognese%20-%20updated%20recipe_20%20April%202023.pdf">offisielle oppskriften</a>, hentet fra selveste<a href="https://www.accademiaitalianadellacucina.it"> l’Accademia Italiana della Cucina</a>. Sjekk originalen for mer detaljer og do's and don'ts.</p>
+            <p>Lykke til med kokingen – håper det smaker!</p>
+        </section>
+
         <section id="ingredienser">
-        <h2>Ingredienser</h2>
-        <p>Til 6 personer.</p>
-        <ul>
-            <li>Kvernet storfekjøtt (400 g)</li>
-            <li>Ferskt sideflesk/buklist av svin, eller <a href="https://smakavitalia.no/pancetta-ca-300g-franchi-salumi">urøkt pancetta</a> (150 g)</li>
-            <li>½ løk (60 g)</li>
-            <li>1 gulrot (60 g)</li>
-            <li>1 selleristang (60 g)</li>
-            <li>1 glass hvit</a> eller rød vin (125 ml)</li>
-            <li>Silte tomater (<a href="https://www.google.com/search?q=tomat+passata&udm=14">Passata</a>) (200 g)</li>
-            <li>Tomatpuré, <a href="https://www.google.com/search?q=tomatpur%C3%A9+dobbel&udm=14">dobbelkonsentrert</a> (1 ss)</li>
-            <li>Kjøtt- eller grønnsakskraft (250 ml)</li>
-            <li>Olivenolje (3 ss)</li>
-            <li>Salt og pepper</li>
-            <li>Pasta (Tagliatelle)</li>
-        </ul>
+            <h2>Ingredienser</h2>
+            <p>Til 6 personer.</p>
+            <ul>
+                <li><input id="kjøtt" type="checkbox" /><label for="kjøtt">Kvernet storfekjøtt (400 g)</label></li>
+                <li><input id="flesk" type="checkbox" /><label for="flesk">Ferskt sideflesk/buklist av svin, eller <a href="https://smakavitalia.no/pancetta-ca-300g-franchi-salumi">urøkt pancetta</a> (150 g)</label></li>
+                <li><input id="løk" type="checkbox" /><label for="løk">½ løk (60 g)</label></li>
+                <li><input id="gulrot" type="checkbox" /><label for="gulrot">1 gulrot (60 g)</label></li>
+                <li><input id="selleri" type="checkbox" /><label for="selleri">1 selleristang (60 g)</label></li>
+                <li><input id="vin" type="checkbox" /><label for="vin">1 glass hvit</a> eller rød vin (125 ml)</label></li>
+                <li><input id="tomater" type="checkbox" /><label for="tomater">Silte tomater (<a href="https://www.google.com/search?q=tomat+passata&udm=14">Passata</a>) (200 g)</label></li>
+                <li><input id="tomatpure" type="checkbox" /><label for="tomatpure">Tomatpuré, <a href="https://www.google.com/search?q=tomatpur%C3%A9+dobbel&udm=14">dobbelkonsentrert</a> (1 ss)</label></li>
+                <li><input id="kraft" type="checkbox" /><label for="kraft">Kjøtt- eller grønnsakskraft (250 ml)</label></li>
+                <li><input id="olivenolje" type="checkbox" /><label for="olivenolje">Olivenolje (3 ss)</label></li>
+                <li><input id="salt" type="checkbox" /><label for="salt">Salt og pepper</label></li>
+                <li><input id="pasta" type="checkbox" /><label for="pasta">Pasta (Tagliatelle)</label></li>
+            </ul>
         </section>
 
         <section>
             <h2>Slik gjør du</h2>
-            <p><mark>Les hele oppskriften før du begynner, så er du bedre forberedt!</mark></p>
+            <p><em>Les hele oppskriften før du begynner, så er du bedre forberedt!</em></p>
             
             <h3>Steg 1 — Mise en place</h3>
             <p>Sett frem alt du trenger, slik at det er lett tilgjengelig underveis:</p>
