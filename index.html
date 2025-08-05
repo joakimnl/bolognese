@@ -5,13 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Ragù alla Bolognese &bull; Den ekte, tradisjonelle oppskriften</title>
         <style>
+            html {
+                font-size: clamp(1em, 0.9em + 1vw, 1.5em);
+            }
             body {
-                background: rgb(255, 245, 231);
+                background: rgb(255 245 231 / 50%);
                 color: #201500;
-                font: normal 1em/1.5 "Lucida Grande", Verdana, sans-serif;
+                font-family: "Lucida Grande", Verdana, sans-serif;
+                line-height: 1.5;
                 margin: 0 auto;
                 max-width: 700px;
-                padding: 0 0.5lh 1lh;
+                padding: 0;
             }
              body::before {
                 content: "";
@@ -30,13 +34,25 @@
                 margin: 1em 0 0;
             }
 
+            :is(header, section) {
+                padding: 0 0.5lh;
+            }
+
             #ingredienser {
-                padding: 0;
-                list-style-position: inside;
+                background: #fff;
+                border-left: 0.5lh solid #009246;
+                border-right: 0.5lh solid #ce2b37;
+                padding: 0.75lh;
+                > h2 { margin: 0; }
+                > ul {
+                    list-style-position: inside;
+                    margin: 0;
+                    padding: 0;
+                }
             }
 
             :is(h1,h2,h3) {
-                font-family: "Comic Sans MS";
+                
             }
 
             hr {
@@ -48,7 +64,7 @@
                     #ce2b37 66.66%
                     );
                 border: 0;
-                height: 0.25lh;
+                height: 0.5lh;
             }
         </style>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍝</text></svg>">
@@ -59,17 +75,17 @@
     </head>
 
     <body>
-        <h1>Ragù alla Bolognese</h1>
-        <p>Buongiorno! Elsker du også <em>bolognese</em>?</p>
-        <p>Dette er den <a href="https://www.accademiaitalianadellacucina.it/sites/default/files/Rag%C3%B9%20alla%20bolognese%20-%20updated%20recipe_20%20April%202023.pdf">"ekte", tradisjonelle oppskriften</a> på Ragù alla Bolognese, hentet fra <a href="https://www.accademiaitalianadellacucina.it">l’Accademia Italiana della Cucina</a>.</p>
-
-        <p>Lykke til med kokingen — håper det smaker!</p>
-
-        <hr aria-hidden="true" />
+        <header>
+            <h1>Ragù alla Bolognese</h1>
+            <p>Buongiorno! Elsker du også <em>bolognese</em>?</p>
+            <p>Dette er den <a href="https://www.accademiaitalianadellacucina.it/sites/default/files/Rag%C3%B9%20alla%20bolognese%20-%20updated%20recipe_20%20April%202023.pdf">"ekte", tradisjonelle oppskriften</a> på Ragù alla Bolognese, hentet fra <a href="https://www.accademiaitalianadellacucina.it">l’Accademia Italiana della Cucina</a>.</p>
+            <p>Lykke til med kokingen — håper det smaker!</p>
+        </header>
         
+        <section id="ingredienser">
         <h2>Ingredienser</h2>
         <p>Til 6 personer.</p>
-        <ul id="ingredienser">
+        <ul>
             <li>Kvernet storfekjøtt (400 g)</li>
             <li>Ferskt sideflesk/buklist av svin, eller <a href="https://smakavitalia.no/pancetta-ca-300g-franchi-salumi">urøkt pancetta</a> (150 g)</li>
             <li>½ løk (60 g)</li>
@@ -83,43 +99,44 @@
             <li>Salt og pepper</li>
             <li>Pasta (Tagliatelle)</li>
         </ul>
+        </section>
 
-        <hr aria-hidden="true" />
+        <section>
+            <h2>Slik gjør du</h2>
+            <p><mark>Les hele oppskriften før du begynner, så er du bedre forberedt!</mark></p>
+            
+            <h3>Steg 1 — Mise en place</h3>
+            <p>Sett frem alt du trenger, slik at det er lett tilgjengelig underveis:</p>
+            <ul>
+                <li>ingrediensene</li>
+                <li>kokkekniv og skjærefjøl</li>
+                <li>bolle til de hakkede grønnsakene</li>
+                <li>stor gryte (26 cm), gjerne emaljert støpejernsgryte</li>
+                <li>tresleiv</li>
+                <li>matavfallsbeholder</li>
+            </ul>
+            <p><em>Mise en place</em> er fransk og betyr <em>gjør det skikkelig, for én gangs skyld</em>.</p>
 
-        <h2>Slik gjør du</h2>
-        <p><mark>Les hele oppskriften før du begynner, så er du bedre forberedt!</mark></p>
-        
-        <h3>Steg 1 — Mise en place</h3>
-        <p>Sett frem alt du trenger, slik at det er lett tilgjengelig underveis:</p>
-        <ul>
-            <li>ingrediensene</li>
-            <li>kokkekniv og skjærefjøl</li>
-            <li>bolle til de hakkede grønnsakene</li>
-            <li>stor gryte (26 cm), gjerne emaljert støpejernsgryte</li>
-            <li>tresleiv</li>
-            <li>matavfallsbeholder</li>
-        </ul>
-        <p><em>Mise en place</em> er fransk og betyr <em>gjør det skikkelig, for én gangs skyld</em>.</p>
+            <h3>Steg 2 – Få pancettaen i panna</h3>
+            <p>Ha olivenolje i gryta og sett den på lav-medium varme. Kutt pancettaen i små terninger, og la den putre mens fettet smelter.</p>
+            
+            <h3>Steg 3 - Mykgjør grønnsakene</h3>
+            <p>Kutt grønnsakene i små terninger, og bland dem inn med pancettaen på lav varme. Rør rundt til de er myke. De skal ikke brunes eller få farge, så du må røre ganske ofte.</p>
 
-        <h3>Steg 2 – Få pancettaen i panna</h3>
-        <p>Ha olivenolje i gryta og sett den på lav-medium varme. Kutt pancettaen i små terninger, og la den putre mens fettet smelter.</p>
-        
-        <h3>Steg 3 - Mykgjør grønnsakene</h3>
-        <p>Kutt grønnsakene i små terninger, og bland dem inn med pancettaen på lav varme. Rør rundt til de er myke. De skal ikke brunes eller få farge, så du må røre ganske ofte.</p>
+            <h3>Steg 4 – Brun kjøttet</h3>
+            <p>Sleng så oppi kjøttet og sett på medium varme. Hakk det opp og rør rundt til det freser og er brunt.</p>
 
-        <h3>Steg 4 – Brun kjøttet</h3>
-        <p>Sleng så oppi kjøttet og sett på medium varme. Hakk det opp og rør rundt til det freser og er brunt.</p>
+            <h3>Steg 5 - Fyll på med væske</h3>
+            <p>Oppi med vinen! Den koke vi. Når den er kokt bort, har du oppi tomatpuré og tomatsaus. Rør det godt inn og ha i kraften. La det putre i to-tre timer på lav varme, med lokket på.</p>
 
-        <h3>Steg 5 - Fyll på med væske</h3>
-        <p>Oppi med vinen! Den koke vi. Når den er kokt bort, har du oppi tomatpuré og tomatsaus. Rør det godt inn og ha i kraften. La det putre i to-tre timer på lav varme, med lokket på.</p>
+            <h3>Mens du venter....</h3>
+            <p>Stikk innom og rør en gang i blant. Hvis det trengs kan du ha oppi mer kraft. Ikke glem å koke pasta – tagliatelle er det tradisjonelle valget.</p>
 
-        <h3>Mens du venter....</h3>
-        <p>Stikk innom og rør en gang i blant. Hvis det trengs kan du ha oppi mer kraft. Ikke glem å koke pasta – tagliatelle er det tradisjonelle valget.</p>
-
-        <h3>Steg 6 – Servér!</h3>
-        <p>Når sausen er mørk, tjukk og blank er den klar til servering. Smak til med salt og pepper, og nyt.</p>
-        <hr aria-hidden="true" />
-        <p>Arrividerci!</p>
-        <p>(Send gjerne bilder og/eller kommentarer til <a href="mailto:hei@bolognese.no">hei@bolognese.no</a>)</p>
+            <h3>Steg 6 – Servér!</h3>
+            <p>Når sausen er mørk, tjukk og blank er den klar til servering. Smak til med salt og pepper, og nyt.</p>
+            <hr aria-hidden="true" />
+            <p>Arrividerci!</p>
+            <p>(Send gjerne bilder og/eller kommentarer til <a href="mailto:hei@bolognese.no">hei@bolognese.no</a>)</p>
+        </section>
     </body>
 </html>
