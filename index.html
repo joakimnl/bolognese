@@ -40,6 +40,7 @@
 
             * {
                 box-sizing: border-box;
+                margin: 0;
             }
 
             img {
@@ -68,14 +69,17 @@
             html {
                 font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
                 font-size: clamp(1em, 0.9em + 1vw, 1.5em);
+                line-height: 1.5;
             }
 
             body {
                 margin: 0;
+                padding: 0.5em;
             }
 
             :is(h1, h2, h3) {
                 font-family: Irregardless;
+                line-height: 1;
             }
 
             :is(h1,h2,h3):first-child {
@@ -84,12 +88,12 @@
 
             h2 {
                 color: #ce2b37;
-                font-size: 2em;
+                font-size: 2.5em;
                 font-weight: 700;
             }
-            h3{
+            h3 {
                 color: #009246;
-                font-size: 1.5em;
+                font-size: 2em;
             }
 
             :is(header, section) {
@@ -98,7 +102,11 @@
             }
 
             :is(section) {
-                padding: 0.5lh;
+                padding: 1lh 0;
+
+                > * + * {
+                    margin-top: 1em;
+                }
             }
 
             :is(header) {
@@ -133,6 +141,7 @@
 
             #ingredienser {
                 border: 3px solid #ce2b37;
+                padding: 0.5lh;
                 
                 h2 {
                     color: #ce2b37;
@@ -146,7 +155,7 @@
 
                     li {
                         display: flex;
-                        align-items: first center;
+                        align-items: center;
                         gap: 0.5em;
                         margin: 0.5em 0;
                     }
@@ -184,7 +193,7 @@
             <p>Til 6 personer.</p>
             <ul>
                 <li><input id="kjøtt" type="checkbox" /><label for="kjøtt">Kvernet storfekjøtt (400 g)</label></li>
-                <li><input id="flesk" type="checkbox" /><label for="flesk">Ferskt sideflesk/buklist av svin, eller <a href="https://smakavitalia.no/pancetta-ca-300g-franchi-salumi">urøkt pancetta</a> (150 g)</label></li>
+                <li><input id="flesk" type="checkbox" /><label for="flesk">Ferskt sideflesk av svin/<a href="https://smakavitalia.no/pancetta-ca-300g-franchi-salumi">urøkt pancetta</a> (150 g)</label></li>
                 <li><input id="løk" type="checkbox" /><label for="løk">½ løk (60 g)</label></li>
                 <li><input id="gulrot" type="checkbox" /><label for="gulrot">1 gulrot (60 g)</label></li>
                 <li><input id="selleri" type="checkbox" /><label for="selleri">1 selleristang (60 g)</label></li>
