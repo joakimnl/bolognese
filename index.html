@@ -127,29 +127,20 @@
             }
 
             :is(header) {
-                &::before,
-                &::after {
+                &::before{
                     content: "";
                     background: linear-gradient(90deg, #009246 33.33%,white 33.33%, white 66.66%, #ce2b37 66.66%);
                     display: block;
-                    height: var(--border-height, 1lh);
-                    position: absolute;
-                    width: 100%;
-                }
-                &::before {
-                    top: 0;
-                }
-                &::after {
-                    bottom: 0;
+                    height: var(--border-height, 2lh);                    
                 }
             }
 
             header {
+                
                 display: grid;
                 gap: 1em;
-                padding: 2lh 0;
                 text-align: center;
-                position: relative;
+                padding-bottom: 1em;
                 h1 {
                     color: #ce2b37;
                     font: 900 3.7em/1 Irregardless;
@@ -163,6 +154,11 @@
                 p {
                     font: 700 2em/1 Irregardless;
                     margin: 0;
+                    text-decoration-line: underline;
+                    text-decoration-style: wavy;
+                    text-decoration-skip-ink: none;
+                    text-decoration-color: #009246;
+                    text-underline-offset: 0.25em;
                 }
             }
 
@@ -213,7 +209,8 @@
             
             <section>
                 <p>👋🏻 Buongiorno! Elsker du også <em>bolognese</em>?</p>
-                <p>Her er den <a href="Rag%C3%B9%20alla%20bolognese%20-%20updated%20recipe_20%20April%202023.pdf">offisielle oppskriften</a>, hentet fra selveste<a href="https://www.accademiaitalianadellacucina.it"> l’Accademia Italiana della Cucina</a>. Sjekk originalen for flere detaljer, samt do's and don'ts.</p>
+                <p>Det blir ikke bedre enn den du lager selv! Du trenger bare gode råvarer og ca. 3 timer (inkl. putring)...</p>
+                <p>Her er den offisielle oppskriften, hentet fra selveste<a href="https://www.accademiaitalianadellacucina.it"> l’Accademia Italiana della Cucina</a>. Sjekk <a href="Rag%C3%B9%20alla%20bolognese%20-%20updated%20recipe_20%20April%202023.pdf">originalen</a> (PDF) for flere detaljer, samt do's and don'ts.</p>
                 <p>Lykke til med kokingen – håper det smaker!</p>
             </section>
 
