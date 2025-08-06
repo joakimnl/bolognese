@@ -73,9 +73,29 @@
             }
 
             body {
+                background: #000;
                 margin: 0;
-                padding: 0.5em;
             }
+
+            @media (min-width: 700px) {
+                body {
+                    background: url("gingham.png");
+                    margin-block: 1lh;
+                }
+            }
+
+            main {
+                background: #fff;
+                border-left: 2px solid #009246;
+                border-right: 2px solid #ce2b37;
+                border-top: 2px solid #000;
+                border-bottom: 2px solid #ce2b37;
+                box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
+                margin-inline: auto;
+                max-width: 700px;
+                border-radius: 15px;
+                overflow: clip;
+                }
 
             :is(h1, h2, h3) {
                 font-family: Irregardless;
@@ -96,13 +116,8 @@
                 font-size: 2em;
             }
 
-            :is(header, section) {
-                margin-inline: auto;
-                max-width: 700px;
-            }
-
             :is(section) {
-                padding: 1lh 0;
+                padding: 1lh;
 
                 > * + * {
                     margin-top: 1em;
@@ -113,16 +128,26 @@
                 &::before,
                 &::after {
                     content: "";
-                    background: linear-gradient(90deg, #009246 33.33%, #fff 33.33%, #fff 66.66%, #ce2b37 66.66%);
+                    background: linear-gradient(90deg, #009246 33.33%,white 33.33%, white 66.66%, #ce2b37 66.66%);
                     display: block;
-                    height: var(--border-height, 1.5em);
+                    height: var(--border-height, 1lh);
+                    position: absolute;
+                    width: 100%;
+                }
+                &::before {
+                    top: 0;
+                }
+                &::after {
+                    bottom: 0;
                 }
             }
 
             header {
                 display: grid;
                 gap: 1em;
+                padding: 2lh 0;
                 text-align: center;
+                position: relative;
                 h1 {
                     color: #ce2b37;
                     font: 900 3.7em/1 Irregardless;
@@ -140,8 +165,9 @@
             }
 
             #ingredienser {
-                border: 3px solid #ce2b37;
-                padding: 0.5lh;
+                border-top: 3px solid #ce2b37;
+                border-bottom: 3px solid #009246;
+                padding: 1lh;
                 
                 h2 {
                     color: #ce2b37;
@@ -176,73 +202,75 @@
     </head>
 
     <body>
-        <header>
-            <h1>Ragù alla Bolognese</h1>
-            <img src="accademiaitalianadellacucina_logo.webp" alt="Logoen til Accademia Italiana della Cucina" heigh="80" width="80" />
-            <p>Den ekte og tradisjonelle oppskriften</p>
-        </header>
-        
-        <section>
-            <p>👋🏻 Buongiorno! Elsker du også <em>bolognese</em>?</p>
-            <p>Her er den <a href="Rag%C3%B9%20alla%20bolognese%20-%20updated%20recipe_20%20April%202023.pdf">offisielle oppskriften</a>, hentet fra selveste<a href="https://www.accademiaitalianadellacucina.it"> l’Accademia Italiana della Cucina</a>. Sjekk originalen for flere detaljer, samt do's and don'ts.</p>
-            <p>Lykke til med kokingen – håper det smaker!</p>
-        </section>
-
-        <section id="ingredienser">
-            <h2>Ingredienser</h2>
-            <p>Til 6 personer.</p>
-            <ul>
-                <li><input id="kjøtt" type="checkbox" /><label for="kjøtt">Kvernet storfekjøtt (400 g)</label></li>
-                <li><input id="flesk" type="checkbox" /><label for="flesk">Ferskt sideflesk av svin/<a href="https://smakavitalia.no/pancetta-ca-300g-franchi-salumi">urøkt pancetta</a> (150 g)</label></li>
-                <li><input id="løk" type="checkbox" /><label for="løk">½ løk (60 g)</label></li>
-                <li><input id="gulrot" type="checkbox" /><label for="gulrot">1 gulrot (60 g)</label></li>
-                <li><input id="selleri" type="checkbox" /><label for="selleri">1 selleristang (60 g)</label></li>
-                <li><input id="vin" type="checkbox" /><label for="vin">1 glass hvit</a> eller rød vin (125 ml)</label></li>
-                <li><input id="tomater" type="checkbox" /><label for="tomater">Silte tomater (<a href="https://www.google.com/search?q=tomat+passata&udm=14">Passata</a>) (200 g)</label></li>
-                <li><input id="tomatpure" type="checkbox" /><label for="tomatpure">Tomatpuré, <a href="https://www.google.com/search?q=tomatpur%C3%A9+dobbel&udm=14">dobbelkonsentrert</a> (1 ss)</label></li>
-                <li><input id="kraft" type="checkbox" /><label for="kraft">Kjøtt- eller grønnsakskraft (250 ml)</label></li>
-                <li><input id="olivenolje" type="checkbox" /><label for="olivenolje">Olivenolje (3 ss)</label></li>
-                <li><input id="salt" type="checkbox" /><label for="salt">Salt og pepper</label></li>
-                <li><input id="pasta" type="checkbox" /><label for="pasta">Pasta (Tagliatelle)</label></li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Slik gjør du</h2>
-            <p><em>Les hele oppskriften før du begynner, så er du bedre forberedt!</em></p>
+        <main>
+            <header>
+                <h1>Ragù alla Bolognese</h1>
+                <img src="accademiaitalianadellacucina_logo.webp" alt="Logoen til Accademia Italiana della Cucina" heigh="80" width="80" />
+                <p>Den ekte og tradisjonelle oppskriften</p>
+            </header>
             
-            <h3>Steg 1 — Mise en place</h3>
-            <p>Sett frem alt du trenger, slik at det er lett tilgjengelig underveis:</p>
-            <ul>
-                <li>ingrediensene</li>
-                <li>kokkekniv og skjærefjøl</li>
-                <li>bolle til de hakkede grønnsakene</li>
-                <li>stor gryte (26 cm), gjerne emaljert støpejernsgryte</li>
-                <li>tresleiv</li>
-                <li>matavfallsbeholder</li>
-            </ul>
-            <p><em>Mise en place</em> er fransk og betyr <em>gjør det skikkelig, for én gangs skyld</em>.</p>
+            <section>
+                <p>👋🏻 Buongiorno! Elsker du også <em>bolognese</em>?</p>
+                <p>Her er den <a href="Rag%C3%B9%20alla%20bolognese%20-%20updated%20recipe_20%20April%202023.pdf">offisielle oppskriften</a>, hentet fra selveste<a href="https://www.accademiaitalianadellacucina.it"> l’Accademia Italiana della Cucina</a>. Sjekk originalen for flere detaljer, samt do's and don'ts.</p>
+                <p>Lykke til med kokingen – håper det smaker!</p>
+            </section>
 
-            <h3>Steg 2 – Få pancettaen i panna</h3>
-            <p>Ha olivenolje i gryta og sett den på lav-medium varme. Kutt pancettaen i små terninger, og la den putre mens fettet smelter.</p>
-            
-            <h3>Steg 3 - Mykgjør grønnsakene</h3>
-            <p>Kutt grønnsakene i små terninger, og bland dem inn med pancettaen på lav varme. Rør rundt til de er myke. De skal ikke brunes eller få farge, så du må røre ganske ofte.</p>
+            <section id="ingredienser">
+                <h2>Ingredienser</h2>
+                <p>Til 6 personer.</p>
+                <ul>
+                    <li><input id="kjøtt" type="checkbox" /><label for="kjøtt">Kvernet storfekjøtt (400 g)</label></li>
+                    <li><input id="flesk" type="checkbox" /><label for="flesk">Ferskt sideflesk av svin/<a href="https://smakavitalia.no/pancetta-ca-300g-franchi-salumi">urøkt pancetta</a> (150 g)</label></li>
+                    <li><input id="løk" type="checkbox" /><label for="løk">½ løk (60 g)</label></li>
+                    <li><input id="gulrot" type="checkbox" /><label for="gulrot">1 gulrot (60 g)</label></li>
+                    <li><input id="selleri" type="checkbox" /><label for="selleri">1 selleristang (60 g)</label></li>
+                    <li><input id="vin" type="checkbox" /><label for="vin">1 glass hvit</a> eller rød vin (125 ml)</label></li>
+                    <li><input id="tomater" type="checkbox" /><label for="tomater">Silte tomater (<a href="https://www.google.com/search?q=tomat+passata&udm=14">Passata</a>) (200 g)</label></li>
+                    <li><input id="tomatpure" type="checkbox" /><label for="tomatpure">Tomatpuré, <a href="https://www.google.com/search?q=tomatpur%C3%A9+dobbel&udm=14">dobbelkonsentrert</a> (1 ss)</label></li>
+                    <li><input id="kraft" type="checkbox" /><label for="kraft">Kjøtt- eller grønnsakskraft (250 ml)</label></li>
+                    <li><input id="olivenolje" type="checkbox" /><label for="olivenolje">Olivenolje (3 ss)</label></li>
+                    <li><input id="salt" type="checkbox" /><label for="salt">Salt og pepper</label></li>
+                    <li><input id="pasta" type="checkbox" /><label for="pasta">Pasta (Tagliatelle)</label></li>
+                </ul>
+            </section>
 
-            <h3>Steg 4 – Brun kjøttet</h3>
-            <p>Sleng så oppi kjøttet og sett på medium varme. Hakk det opp og rør rundt til det freser og er brunt.</p>
+            <section>
+                <h2>Slik gjør du</h2>
+                <p><em>Les hele oppskriften før du begynner, så er du bedre forberedt!</em></p>
+                
+                <h3>Steg 1 — Mise en place</h3>
+                <p>Sett frem alt du trenger, slik at det er lett tilgjengelig underveis:</p>
+                <ul>
+                    <li>ingrediensene</li>
+                    <li>kokkekniv og skjærefjøl</li>
+                    <li>bolle til de hakkede grønnsakene</li>
+                    <li>stor gryte (26 cm), gjerne emaljert støpejernsgryte</li>
+                    <li>tresleiv</li>
+                    <li>matavfallsbeholder</li>
+                </ul>
+                <p><em>Mise en place</em> er fransk og betyr <em>gjør det skikkelig, for én gangs skyld</em>.</p>
 
-            <h3>Steg 5 - Fyll på med væske</h3>
-            <p>Oppi med vinen! Den koke vi. Når den er kokt bort, har du oppi tomatpuré og tomatsaus. Rør det godt inn og ha i kraften. La det putre i to-tre timer på lav varme, med lokket på.</p>
+                <h3>Steg 2 – Få pancettaen i panna</h3>
+                <p>Ha olivenolje i gryta og sett den på lav-medium varme. Kutt pancettaen i små terninger, og la den putre mens fettet smelter.</p>
+                
+                <h3>Steg 3 - Mykgjør grønnsakene</h3>
+                <p>Kutt grønnsakene i små terninger, og bland dem inn med pancettaen på lav varme. Rør rundt til de er myke. De skal ikke brunes eller få farge, så du må røre ganske ofte.</p>
 
-            <h3>Mens du venter....</h3>
-            <p>Stikk innom og rør en gang i blant. Hvis det trengs kan du ha oppi mer kraft. Ikke glem å koke pasta – tagliatelle er det tradisjonelle valget.</p>
+                <h3>Steg 4 – Brun kjøttet</h3>
+                <p>Sleng så oppi kjøttet og sett på medium varme. Hakk det opp og rør rundt til det freser og er brunt.</p>
 
-            <h3>Steg 6 – Servér!</h3>
-            <p>Når sausen er mørk, tjukk og blank er den klar til servering. Smak til med salt og pepper, og nyt.</p>
-            <hr aria-hidden="true" />
-            <p>Arrividerci!</p>
-            <p>(Send gjerne bilder og/eller kommentarer til <a href="mailto:hei@bolognese.no">hei@bolognese.no</a>)</p>
-        </section>
+                <h3>Steg 5 - Fyll på med væske</h3>
+                <p>Oppi med vinen! Den koke vi. Når den er kokt bort, har du oppi tomatpuré og tomatsaus. Rør det godt inn og ha i kraften. La det putre i to-tre timer på lav varme, med lokket på.</p>
+
+                <h3>Mens du venter....</h3>
+                <p>Stikk innom og rør en gang i blant. Hvis det trengs kan du ha oppi mer kraft. Ikke glem å koke pasta – tagliatelle er det tradisjonelle valget.</p>
+
+                <h3>Steg 6 – Servér!</h3>
+                <p>Når sausen er mørk, tjukk og blank er den klar til servering. Smak til med salt og pepper, og nyt.</p>
+                <hr aria-hidden="true" />
+                <p>Arrividerci!</p>
+                <p>(Send gjerne bilder og/eller kommentarer til <a href="mailto:hei@bolognese.no">hei@bolognese.no</a>)</p>
+            </section>
+        </main>
     </body>
 </html>
