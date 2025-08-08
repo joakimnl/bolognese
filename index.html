@@ -13,7 +13,35 @@
         />
         <link
             rel="preload"
-            href="/fonts/Irregardless-Bold.woff2"
+            href="/fonts/applegaramond.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="/fonts/applegaramond-bold.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="/fonts/applegaramond-italic.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="/fonts/applegaramond-lightitalic.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="/fonts/applegaramond-light.woff2"
             as="font"
             type="font/woff2"
             crossorigin
@@ -28,13 +56,37 @@
                 font-style: normal;
                 font-display: fallback;
             }
+    
             @font-face {
-                font-family: "Irregardless";
+                font-family: "Apple Garamond";
                 src:
-                    local("Irregardless"),
-                    url("/fonts/Irregardless-Bold.woff2") format("woff2");
+                    url("/fonts/applegaramond.woff2") format("woff2");
+                font-weight: 400;
+                font-style: normal;
+                font-display: fallback;
+            }
+            @font-face {
+                font-family: "Apple Garamond";
+                src:
+                    url("/fonts/applegaramond-bold.woff2") format("woff2");
                 font-weight: 700;
                 font-style: normal;
+                font-display: fallback;
+            }
+            @font-face {
+                font-family: "Apple Garamond";
+                src:
+                    url("/fonts/applegaramond-light.woff2") format("woff2");
+                font-weight: 100;
+                font-style: normal;
+                font-display: fallback;
+            }
+            @font-face {
+                font-family: "Apple Garamond";
+                src:
+                    url("/fonts/applegaramond-lightitalic.woff2") format("woff2");
+                font-weight: 100;
+                font-style: italic;
                 font-display: fallback;
             }
 
@@ -49,16 +101,16 @@
             }
 
             a {
-                color: #ce2b37;
+                color: #E6002D;
                 outline-color: transparent;
-                text-decoration: 2px underline #ce2b37;
+                text-decoration: 2px underline #E6002D;
                 text-underline-offset: 3px;
             }
 
 
             a:focus {
                 text-decoration: none;
-                background: #ce2b37;
+                background: #E6002D;
                 color: #fff;
             }
 
@@ -67,108 +119,74 @@
             }
 
             html {
-                font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
-                font-size: clamp(1em, 0.9em + 1vw, 1.5em);
+                background: #fffdf9;                
+                font-family: "Apple Garamond", Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+                font-size: clamp(1.25em, 0.9em + 1vw, 1.5em);
+                font-weight: 100;
                 line-height: 1.5;
             }
 
-            body {
-                background: #000;
-                margin: 0;
-            }
-
-            @media (min-width: 700px) {
-                body {
-                    background: url("gingham.png");
-                    background-attachment: fixed;
-                    margin-block: 1lh;
-                }
-                main {
-                    border-radius: 15px;
-                }
-            }
-
             main {
-                background: #fff;
-                border-left: 2px solid #009246;
-                border-right: 2px solid #ce2b37;
-                border-bottom: 2px solid #ce2b37;
-                box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
                 margin-inline: auto;
                 max-width: 700px;
-                overflow: clip;
-                }
+            }
 
             :is(h1, h2, h3) {
-                font-family: Irregardless;
+                font-family: "Apple Garamond";
                 line-height: 1;
             }
 
-            :is(h1,h2,h3):first-child {
-                margin: 0;
-            }
-
             h2 {
-                color: #ce2b37;
-                font-size: 2.5em;
+                color: #E6002D;
+                font-size: 2em;
                 font-weight: 700;
             }
             h3 {
-                color: #009246;
-                font-size: 2em;
+                font-size: 1.5em;
+                font-weight: 400;
             }
 
             :is(section) {
-                padding: 1lh;
+                padding: 1em;
 
                 > * + * {
-                    margin-top: 1em;
+                    margin-top: 0.5lh;
                 }
             }
 
-            :is(header) {
-                &::before{
-                    content: "";
-                    background: linear-gradient(90deg, #009246 33.33%,white 33.33%, white 66.66%, #ce2b37 66.66%);
-                    display: block;
-                    height: var(--border-height, 2lh);                    
-                }
-            }
+            
 
             header {
-                
-                display: grid;
-                gap: 1em;
+                border-top: 5px solid #E6002D;
                 text-align: center;
-                padding-bottom: 1em;
+                padding: 1em;
                 h1 {
-                    color: #ce2b37;
-                    font: 900 3.7em/1 Irregardless;
+                    color: #E6002D;
+                    font: 900 3.7em/1 "Irregardless";
                     margin: 0;
-                }
-
-                img {
-                    place-self: center;
                 }
                 
                 p {
-                    font: 700 2em/1 Irregardless;
-                    margin: 0;
-                    text-decoration-line: underline;
-                    text-decoration-style: wavy;
-                    text-decoration-skip-ink: none;
-                    text-decoration-color: #009246;
-                    text-underline-offset: 0.25em;
+                    font: 100 1.25em/1 "Apple Garamond";
+                    margin: 0.5em 0 0;
                 }
             }
 
+            img#hero {
+                float: left;
+                shape-outside: url("mask.png");
+                clip-path: path("M155.786 190.064C65.9425 218.279 6.37576 179.896 3.41391 155.693L3.4091 155.654C0.437464 131.371 -13.0208 21.3974 46.1966 5.33091C193.324 -34.5867 245.63 161.848 155.786 190.064Z");
+                margin: 1em;
+                margin-inline-start: 0;
+                shape-margin: 1em;
+            }
+
             #ingredienser {
-                border-top: 3px solid #ce2b37;
-                border-bottom: 3px solid #009246;
-                padding: 1lh;
+                border-top: 1px solid #000;
+                border-bottom: 1px solid #000;
                 
                 h2 {
-                    color: #ce2b37;
+                    color: #E6002D;
                     margin: 0;
                 }
 
@@ -190,6 +208,29 @@
                     }
                 }
             }
+
+            #steg {
+                counter-reset: steg;
+
+                h3 {
+                   display: flex;
+                   align-items: center;
+                }
+                h3::before {
+                    counter-increment: steg;
+                    content: counter(steg);
+
+                    background: #E6002D;
+                    border-radius: 100%;
+                    color: #fff;
+                    display: inline-flex;
+                    place-content: center;
+                    margin-inline-end: 0.25em;
+                    height: 1em;
+                    width: 1em;
+                    padding: 0.1em;
+                }
+            }
             
         </style>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍝</text></svg>">
@@ -200,15 +241,15 @@
     </head>
 
     <body>
-        <main>
+        
             <header>
                 <h1>Ragù alla Bolognese</h1>
-                <img src="accademiaitalianadellacucina_logo.webp" alt="Logoen til Accademia Italiana della Cucina" height="80" width="80" />
-                <p>Den ekte og tradisjonelle oppskriften</p>
+                <p>Den ekte, tradisjonelle oppskriften</p>
             </header>
-            
+            <main>    
             <section>
-                <p>👋🏻 Buongiorno! Elsker du også <em>bolognese</em>?</p>
+                <img id="hero" src="folk.webp" height="200" height="200" width="auto" alt="" />
+                <p><strong>Buongiorno!</strong> Elsker du også <em>bolognese</em>?</p>
                 <p>Det blir ikke bedre enn den du lager selv! Du trenger bare gode råvarer og ca. 3 timer (inkl. putring)...</p>
                 <p>Her er den offisielle oppskriften, hentet fra selveste<a href="https://www.accademiaitalianadellacucina.it"> l’Accademia Italiana della Cucina</a>. Sjekk <a href="Rag%C3%B9%20alla%20bolognese%20-%20updated%20recipe_20%20April%202023.pdf">originalen</a> (PDF) for flere detaljer, samt do's and don'ts.</p>
                 <p>Lykke til med kokingen – håper det smaker!</p>
@@ -219,7 +260,7 @@
                 <p>Til 6 personer.</p>
                 <ul>
                     <li><input id="kjøtt" type="checkbox" /><label for="kjøtt">Kvernet storfekjøtt (400 g)</label></li>
-                    <li><input id="flesk" type="checkbox" /><label for="flesk">Ferskt sideflesk av svin/<a href="https://smakavitalia.no/pancetta-ca-300g-franchi-salumi">urøkt pancetta</a> (150 g)</label></li>
+                    <li><input id="flesk" type="checkbox" /><label for="flesk">Sideflesk av svin/<a href="https://smakavitalia.no/pancetta-ca-300g-franchi-salumi">urøkt pancetta</a> (150 g)</label></li>
                     <li><input id="løk" type="checkbox" /><label for="løk">½ løk (60 g)</label></li>
                     <li><input id="gulrot" type="checkbox" /><label for="gulrot">1 gulrot (60 g)</label></li>
                     <li><input id="selleri" type="checkbox" /><label for="selleri">1 selleristang (60 g)</label></li>
@@ -233,11 +274,11 @@
                 </ul>
             </section>
 
-            <section>
+            <section id="steg">
                 <h2>Slik gjør du</h2>
                 <p><em>Les hele oppskriften før du begynner, så er du bedre forberedt!</em></p>
                 
-                <h3>Steg 1 — Mise en place</h3>
+                <h3>Mise en place</h3>
                 <p>Sett frem alt du trenger, slik at det er lett tilgjengelig underveis:</p>
                 <ul>
                     <li>ingrediensene</li>
@@ -249,24 +290,24 @@
                 </ul>
                 <p><em>Mise en place</em> er fransk og betyr <em>gjør det skikkelig, for én gangs skyld</em>.</p>
 
-                <h3>Steg 2 – Få pancettaen i panna</h3>
+                <h3>Få pancettaen i panna</h3>
                 <p>Ha olivenolje i gryta og sett den på lav-medium varme. Kutt pancettaen i små terninger, og la den putre mens fettet smelter.</p>
                 
-                <h3>Steg 3 - Mykgjør grønnsakene</h3>
+                <h3>Mykgjør grønnsakene</h3>
                 <p>Kutt grønnsakene i små terninger, og bland dem inn med pancettaen på lav varme. Rør rundt til de er myke. De skal ikke brunes eller få farge, så du må røre ganske ofte.</p>
 
-                <h3>Steg 4 – Brun kjøttet</h3>
+                <h3>Brun kjøttet</h3>
                 <p>Sleng så oppi kjøttet og sett på medium varme. Hakk det opp og rør rundt til det freser og er brunt.</p>
 
-                <h3>Steg 5 - Fyll på med væske</h3>
+                <h3>Fyll på med væske</h3>
                 <p>Oppi med vinen! Den koke vi. Når den er kokt bort, har du oppi tomatpuré og tomatsaus. Rør det godt inn og ha i kraften. La det putre i to-tre timer på lav varme, med lokket på.</p>
 
                 <h3>Mens du venter....</h3>
                 <p>Stikk innom og rør en gang i blant. Hvis det trengs kan du ha oppi mer kraft. Ikke glem å koke pasta – tagliatelle er det tradisjonelle valget.</p>
 
-                <h3>Steg 6 – Servér!</h3>
+                <h3>Servér!</h3>
                 <p>Når sausen er mørk, tjukk og blank er den klar til servering. Smak til med salt og pepper, og nyt.</p>
-                <hr aria-hidden="true" />
+                
                 <p>Arrividerci!</p>
                 <p>(Send gjerne bilder og/eller kommentarer til <a href="mailto:hei@bolognese.no">hei@bolognese.no</a>)</p>
             </section>
