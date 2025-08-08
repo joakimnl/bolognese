@@ -119,7 +119,8 @@
             }
 
             html {
-                background: #fffdf9;                
+                background: #fffdf9;
+                border: 5px solid #E6002D;              
                 font-family: "Apple Garamond", Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
                 font-size: clamp(1.25em, 0.9em + 1vw, 1.5em);
                 font-weight: 100;
@@ -157,16 +158,15 @@
             
 
             header {
-                border-top: 5px solid #E6002D;
                 text-align: center;
-                padding: 1em;
-                h1 {
+                padding: 1em 1em 0;
+                & h1 {
                     color: #E6002D;
-                    font: 900 3.7em/1 "Irregardless";
+                    font: 900 3.65em/1 "Irregardless";
                     margin: 0;
                 }
                 
-                p {
+                & p {
                     font: 100 1.25em/1 "Apple Garamond";
                     margin: 0.5em 0 0;
                 }
@@ -185,23 +185,23 @@
                 border-top: 1px solid #000;
                 border-bottom: 1px solid #000;
                 
-                h2 {
+                & h2 {
                     color: #E6002D;
                     margin: 0;
                 }
 
-                ul {
+                & ul {
                     list-style: none inside;
                     margin: 0;
                     padding: 0;
 
-                    li {
+                    & li {
                         display: flex;
                         align-items: center;
                         gap: 0.5em;
                         margin: 0.5em 0;
                     }
-                    [type=checkbox] {
+                    & [type=checkbox] {
                         flex: 0 0 1.5em;
                         height: 1.5em;
                         width: 1.5em;
@@ -212,11 +212,11 @@
             #steg {
                 counter-reset: steg;
 
-                h3 {
+                & h3 {
                    display: flex;
                    align-items: center;
                 }
-                h3::before {
+                & h3::before {
                     counter-increment: steg;
                     content: counter(steg);
 
